@@ -263,4 +263,25 @@
   }
    //***** END of Circular queue code
 
+function findManager(){
+obj = {"a" : "b",
+"c" : "d",
+"e" : "c",
+"f" : "c"};
+var iManage = {};
+Object.keys(obj).forEach((element) => {
+	myRecur(element, element);
+})
+
+function myRecur(element, originalKey){
+if(!iManage[originalKey]){
+iManage[originalKey] = '';
+}
+iManage[originalKey] += '-' + obj[element];	
+
+	if(Object.keys(obj).includes(obj[element])){
+		myRecur(obj[element], originalKey)	
+	};
+}
+}
 </script>
